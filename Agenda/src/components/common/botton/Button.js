@@ -1,6 +1,5 @@
-let Button = (titulo, id, img) => {
+let Button = (title, id, img) =>{
     let div = document.createElement("div");
-    div.className = "button";
     div.id = id;
 
     let divImage = document.createElement("div");
@@ -8,16 +7,17 @@ let Button = (titulo, id, img) => {
 
     let imgIcon = document.createElement("img");
     imgIcon.src = `./assets/icons/${img}`;
+    imgIcon.alt = title;
+    divImage.appendChild(imgIcon);
 
     let p = document.createElement("p");
     p.className = "button-text";
-    p.textContent = titulo;
+    p.textContent = title;
 
-    divImage.appendChild(imgIcon);
     div.appendChild(divImage);
     div.appendChild(p);
 
     return div;
-};
+}
 
-export { Button };
+export {Button};

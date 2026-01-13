@@ -1,32 +1,12 @@
-.item-contacto {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  border-radius: 8px;
-  background-color: #f5f5f5;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  max-width: 320px;
-  font-family: Arial, sans-serif;
-}
+.item-contacto{
+    font-family: monospace;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
 
-.item-contacto img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.item-contacto p {
-  margin: 0;
-  line-height: 1.2;
-}
-
-.item-contacto p:first-of-type {
-  font-weight: bold;
-  color: #333;
-}
-
-.item-contacto p:last-of-type {
-  font-size: 0.9rem;
-  color: #666;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
 }

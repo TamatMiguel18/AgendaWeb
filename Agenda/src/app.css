@@ -3,27 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
-#app {
-width: 100vw;
-height: 100vh;
-display: grid;
-grid-template-columns: 300px 1fr;
-gap: 10px;
+
+#app{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 10px;
 }
 
-#nav {
-  width: 20%;
-  height: 100vh;
-  border-right: 1px solid #ccc;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
+#nav{
+    height: 100vh;
+    border: 1px solid black;
 }
 
-
-#container {
-width: 80%;
-height: 100vh;
-border: 1px solid #000;
+#container{
+    height: 100vh;
+    border: 1px solid black;
 }
