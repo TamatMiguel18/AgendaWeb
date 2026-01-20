@@ -1,53 +1,133 @@
-/* Contenedor principal */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --accent: #3618e0;
+    --background: #0f172a;
+    --surface: #1e293b;
+    --surface-light: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border: #475569;
+
+    --radius: 12px;
+    --radius-sm: 8px;
+    --transition: 0.25s ease;
+}
+
+/* =========================
+   FORM PADRE
+   ========================= */
 .nuevoContacto-padre {
-    width: 100%;
-    max-width: 360px;
-    margin: 20px auto;
-    padding: 20px 24px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     gap: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px;
+
+    background: linear-gradient(
+        135deg,
+        var(--surface-light),
+        var(--surface)
+    );
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: box-shadow var(--transition), transform var(--transition);
 }
 
-/* Título */
+.nuevoContacto-padre:hover {
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   TITULO
+   ========================= */
 .nuevoContacto-titulo {
     margin: 0;
-    text-align: center;
-    font-size: 20px;
-    color: #333;
+    font-size: 1.5rem;
     font-weight: 600;
+    text-align: center;
+    color: var(--primary);
 }
 
-/* Inputs */
-.name-input,
-.telefono-input {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+/* =========================
+   INPUTS
+   ========================= */
+.nuevoContacto-padre input {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background-color: var(--surface-light);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.nuevoContacto-padre input::placeholder {
+    color: var(--text-secondary);
+}
+
+.nuevoContacto-padre input:focus {
     outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
 }
 
-/* Placeholder */
-.name-input::placeholder,
-.telefono-input::placeholder {
-    color: #999;
+/* =========================
+   BOTONES
+   ========================= */
+.nuevoContacto-padre button {
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
-/* Focus */
-.name-input:focus,
-.telefono-input:focus {
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+.nuevoContacto-padre button[type="submit"] {
+    background: var(--accent);
+    color: #fff;
 }
 
-/* Opcional: fondo general */
-body {
-    background-color: #f3f4f6;
+.nuevoContacto-padre button[type="submit"]:hover {
+    background: #d40ad4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
+}
+
+.nuevoContacto-padre button[type="button"] {
+    background: var(--surface-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.nuevoContacto-padre button[type="button"]:hover {
+    background: var(--surface);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 480px) {
+    .nuevoContacto-padre {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .nuevoContacto-titulo {
+        font-size: 1.25rem;
+    }
 }
