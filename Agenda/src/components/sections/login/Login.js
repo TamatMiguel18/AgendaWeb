@@ -15,6 +15,19 @@ function login() {
     let button = document.createElement("button");
     button.innerHTML = "Iniciar Sesión";
 
+
+    button.addEventListener("click", function(){
+
+        const username = user.value;
+        const pass = password.value;
+
+        if (username && pass ) {
+            window.location.href = "../../src/app.html"
+        } else {
+            alert("Por favor llene los datos")
+        }
+    })
+
     section.appendChild(h3);
     section.appendChild(user);
     section.appendChild(password);
