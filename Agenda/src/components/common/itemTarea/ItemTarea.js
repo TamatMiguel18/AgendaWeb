@@ -1,29 +1,35 @@
 import { TareaList, guardarTarea } from "../../sections/tareas/stoge.js";
+import { renderTareas } from "../../sections/tareas/tareas.js";
 
 let itemTarea = (tarea, index) => {
-    let itemTarea = document.createElement("div");
+    let div = document.createElement("div");
     div.className = "item-tarea";
 
-    let etiquetaEstado = document.createElement("input");
-    etiquetaEstado.type = "checkbox";
-    etiquetaEstado.checked = tarea.estado;
-
-    etiquetaEstado.addEventListener("change", () => {
-        tareaList[index].estado = !tarea.estado;
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = tarea.estado;
+    checkbox.addEventListener("change", () => {
+        TareaList[index].estado = !TareaList[index].estado;
         guardarTarea();
+        renderTareas();
     });
 
-    let etiquetaNombre = document.createElement("p");
-    etiquetaNombre.textContent = nombre;
+    let nombre = document.createElement("p");
+    nombre.textContent = tarea.nombre;
 
-    let etiquetaPioridad = document.createElement("p");
-    etiquetaPioridad.textContent = pioridad;
+    let prioridad = document.createElement("p");
+    prioridad.textContent = tarea.prioridad;
 
-    itemTarea.appendChild(etiquetaEstado);
-    itemTarea.appendChild(etiquetaNombre);
-    itemTarea.appendChild(etiquetaPioridad);
+    let btnEliminar = document.createElement("button");
+    btnEliminar.textContent = "Eliminar";
+    btnEliminar.addEventListener("click", () => {
+        TareaList.splice(index, 1); // eliminar del array
+        guardarTarea();
+        renderTareas(); // actualizar la sección automáticamente
+    });
 
-    return itemTarea;
-}
+    div.append(checkbox, nombre, prioridad, btnEliminar);
+    return div;
+};
 
 export { itemTarea };
