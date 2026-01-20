@@ -33,3 +33,4 @@ let itemTarea = (tarea, index) => {
 };
 
 export { itemTarea };
+
