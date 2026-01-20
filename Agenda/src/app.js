@@ -1,36 +1,44 @@
-import { Button } from "./components/common/botton/Button.js";
-import { Contactos } from "./components/sections/contactos/contactos.js";
-import {FormularioContacto} from "./components/sections/newContacFrom/NewContactFrom.js";
+//section menu
 
-let nav = document.getElementById("nav");
+import { Button } from "./components/common/button/button.js";
+import { Contactos } from "./components/sections/contactos/Contactos.js";
+import { viewContacts, viewNewContacts, viewToDoList, viewNewTask } from "./components/layout/nav/NavController.js";
+
+
 let app = document.getElementById("app");
 
+let nav = document.getElementById("nav");
+
 nav.appendChild(Button(
-    "Agenda", 
-    "agenda", 
+    "Agenda",
+    "agenda",
     "User.svg",
-function(){
-    container.innerHTML = "";
-    container.appendChild(Contactos());
-
-
-}
+    viewContacts
 ));
 nav.appendChild(Button(
-    "Agregar Contacto",
-     "add",
-      "mas.svg",
-      function (){
-        container.innerHTML = "";
-        container.appendChild(FormularioContacto());
-      }
-    ));
-nav.appendChild(Button("ToDoList", "todo", "lista.svg"));
-nav.appendChild(Button("Agregar Tarea", "addTask", "mas.svg"));
+    "+",
+    "plus",
+    "mas.svg",
+    viewNewContacts
+));
+nav.appendChild(Button(
+    "Tareas",
+    "toDoList",
+    "lista.svg",
+    viewToDoList
+));
+nav.appendChild(Button(
+    "Crear Tarea",
+    "plus",
+    "mas.svg",
+    viewNewTask
+));
 
 let container = document.getElementById("container");
-container.innerHTML = "";
-/*
+
 container.appendChild(Contactos());
-container.appendChild(FormularioContacto());*/
+
+
+
+
 

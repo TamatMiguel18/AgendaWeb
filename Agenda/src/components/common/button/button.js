@@ -1,4 +1,4 @@
-let Button = (title, id, img, callback) =>{
+let Button = (title, id, img, callback) => {
     let div = document.createElement("div");
     div.id = id;
 
@@ -17,12 +17,9 @@ let Button = (title, id, img, callback) =>{
     div.appendChild(divImage);
     div.appendChild(p);
 
-    div.addEventListener("click", () =>{
-        callback(); 
-    console.log("Seccion completada");
-    });
+    div.addEventListener("click", () => { callback(); console.log("seccion completada"); });
 
     return div;
 }
 
-export {Button};
+export { Button };

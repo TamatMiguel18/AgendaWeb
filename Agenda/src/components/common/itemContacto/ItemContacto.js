@@ -1,7 +1,7 @@
 let itemContacto = (imgContacto, nombre, telefono) => {
     let div = document.createElement("div");
     div.className = "item-contacto";
-    
+
     let etiquetaImg = document.createElement("img");
     etiquetaImg.src = `./assets/icons/${imgContacto}`;
 
@@ -18,4 +18,4 @@ let itemContacto = (imgContacto, nombre, telefono) => {
     return div;
 }
 
-export {itemContacto};
+export { itemContacto };

@@ -1,0 +1,76 @@
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #8b5cf6;
+    --accent: #ec4899;
+    --background: #0f172a;
+    --surface: #1e293b;
+    --surface-light: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border: #475569;
+}
+
+div[id] {
+    width: 120px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--surface-light), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 8px auto;
+}
+
+div[id]:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    box-shadow: 0 12px 32px rgba(99, 102, 241, 0.3);
+    border-color: var(--primary);
+}
+
+.button-image {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(99, 102, 241, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    transition: background-color 0.3s ease;
+}
+
+div[id]:hover .button-image {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button-image img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(92%) sepia(12%) saturate(1197%) hue-rotate(201deg) brightness(105%) contrast(101%);
+}
+
+.button-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0;
+    padding: 0 8px;
+    transition: color 0.3s ease;
+}
+
+div[id]:hover .button-text {
+    color: #ffffff;
+}
+
+div[id]:active {
+    transform: scale(0.95);
+}
