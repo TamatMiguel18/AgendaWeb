@@ -1,23 +1,82 @@
-*{
+/* Reset básico y consistente */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#app{
-    width: 100vw;
-    height: 100vh;
+/* App layout */
+#app {
+    min-height: 100vh;
+    width: 100%;
+
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 10px;
+    grid-template-columns: 280px 1fr;
+    gap: 12px;
+
+    background-color: var(--background);
+    padding: 12px;
 }
 
-#nav{
-    height: 100vh;
-    border: 1px solid black;
+/* Navegación */
+#nav {
+    background: linear-gradient(
+        180deg,
+        var(--surface-light),
+        var(--surface)
+    );
+
+    border-radius: 14px;
+    border: 1px solid var(--border);
+
+    padding: 16px;
+
+    overflow-y: auto;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-#container{
-    height: 100vh;
-    border: 1px solid black;
+/* Contenido principal */
+#container {
+    background: linear-gradient(
+        180deg,
+        var(--surface),
+        var(--background)
+    );
+
+    border-radius: 14px;
+    border: 1px solid var(--border);
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Responsive: sidebar colapsable */
+@media (max-width: 900px) {
+    #app {
+        grid-template-columns: 72px 1fr;
+    }
+
+    #nav {
+        padding: 12px 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    #app {
+        grid-template-columns: 1fr;
+    }
+
+    #nav {
+        display: none;
+    }
 }
