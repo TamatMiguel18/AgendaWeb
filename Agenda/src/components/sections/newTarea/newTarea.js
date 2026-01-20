@@ -1,9 +1,9 @@
-import { guardarTareas, TareaList } from "../tareas/stoge.js";
+import { TareaList, guardarTarea } from "../tareas/stoge.js";
+import { renderTareas } from "../tareas/tareas.js";
 
 let NuevaTarea = () => {
-
-    let nuevaTareaForm = document.createElement("form");
-    nuevaTareaForm.className = "nueva-tarea-form";
+    let form = document.createElement("form");
+    form.className = "nueva-tarea-form";
 
     let h3 = document.createElement("h3");
     h3.textContent = "Nueva Tarea";
@@ -20,36 +20,26 @@ let NuevaTarea = () => {
     btnSubmit.type = "submit";
     btnSubmit.textContent = "Agregar Tarea";
 
-    let btnCancel = document.createElement("button");
-    btnCancel.type = "button";
-    btnCancel.textContent = "Cancelar";
+    form.append(h3, inputNombre, inputPrioridad, btnSubmit);
 
-    nuevaTareaForm.appendChild(h3);
-    nuevaTareaForm.appendChild(inputNombre);
-    nuevaTareaForm.appendChild(inputPrioridad);
-    nuevaTareaForm.appendChild(btnSubmit);
-    nuevaTareaForm.appendChild(btnCancel);
-
-    // Programacion del formulario
-    nuevaTareaForm.addEventListener("submit", (e) => {
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
-        if (!inputNombre.value || !inputPrioridad.value) return;
+        if (!inputNombre.value.trim() || !inputPrioridad.value.trim()) return;
 
-        let nuevaTarea = {
+        TareaList.push({
             estado: false,
             nombre: inputNombre.value,
             prioridad: inputPrioridad.value
-        };
+        });
 
-        console.log(nuevaTarea);
-        alert("Tarea agregada con exito");
-        TareaList.push(nuevaTarea);
-        guardarTareas();
+        guardarTarea();
+        renderTareas(); // actualizar lista automáticamente
+
         inputNombre.value = "";
         inputPrioridad.value = "";
     });
 
-    return nuevaTareaForm;
+    return form;
 };
 
 export { NuevaTarea };
