@@ -38,7 +38,17 @@ let container = document.getElementById("container");
 
 container.appendChild(Contactos());
 
+async function tareas() {
+    try {
+        let data = await fetch("http://jsonplaceholder.typicode.com/posts");
+        let r = await data.json();
+        console.log(r);
 
+    } catch (error) {
+        console.log(error);
+    }
+}
 
+tareas();
 
-
+console.log("Completado")
