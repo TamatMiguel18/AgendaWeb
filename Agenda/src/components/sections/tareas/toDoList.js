@@ -3,7 +3,7 @@ import { itemTarea } from "../../common/itemTarea/ItemTarea.js";
 
 let tareas = () => {
     let section = document.createElement("section");
-    sectionTareas.className = "tareas";
+    section.className = "tareas";
 
     let h2 = document.createElement("h2");
     h2.textContent = "Tareas";
