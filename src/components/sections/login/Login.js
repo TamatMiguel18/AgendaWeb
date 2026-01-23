@@ -16,13 +16,13 @@ function login() {
     button.innerHTML = "Iniciar Sesión";
 
 
-    button.addEventListener("click", function(){
+    button.addEventListener("click", function () {
 
         const username = user.value;
         const pass = password.value;
 
-        if (username && pass ) {
-            window.location.href = "../../src/app.html"
+        if (username && pass) {
+            window.location.href = "../../src/App.html"
         } else {
             alert("Por favor llene los datos")
         }

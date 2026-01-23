@@ -1,19 +1,23 @@
 :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary: #8b5cf6;
-    --accent: #ec4899;
+    /* Colores principales */
+    --primary: #8383ec;
+    --primary-dark: #9b9cc0;
+    --secondary: #99b1b4;
+    --accent: #fb7185;
 
-    --background: #0f172a;
-    --surface: #1e293b;
-    --surface-light: #334155;
+    /* Fondos */
+    --background: #0b1020;
+    --surface: rgba(30, 41, 59, 0.85);
+    --surface-light: rgba(51, 65, 85, 0.9);
 
-    --text-primary: #f1f5f9;
-    --text-secondary: #cbd5e1;
+    /* Texto */
+    --text-primary: #f8fafc;
+    --text-secondary: #c7d2fe;
 
-    --border: #475569;
-
-    --radius: 14px;
+    /* UI */
+    --border: rgba(148, 163, 184, 0.25);
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* Contenedor contactos */
@@ -24,40 +28,53 @@
 
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 18px;
 
-    padding: 8px 16px;
+    padding: 20px 24px;
+
+    background: var(--surface);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 /* Título */
 .contactos h2 {
     color: var(--text-primary);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.4px;
 
-    margin-bottom: 18px;
-    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+    padding-bottom: 10px;
 
     border-bottom: 1px solid var(--border);
 }
 
-/* Subtítulo opcional o contador */
+/* Subtítulo / contador */
 .contactos h2 span {
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-secondary);
-    margin-left: 8px;
+    margin-left: auto;
+    padding: 4px 10px;
+
+    background: rgba(99, 102, 241, 0.15);
+    border-radius: 999px;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
     .contactos {
-        padding: 8px 12px;
+        padding: 16px;
+        gap: 14px;
     }
 
     .contactos h2 {
-        font-size: 1.3rem;
-        margin-bottom: 14px;
+        font-size: 1.35rem;
     }
 }
