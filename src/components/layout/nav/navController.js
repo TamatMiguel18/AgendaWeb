@@ -1,4 +1,4 @@
-import { Contactos } from "../../sections/contactos/contactos.js";
+import { Contactos } from "../../sections/contactos/Contactos.js";
 import { nuevoContacto } from "../../sections/newContactFrom/NewContactFrom.js";
 import { tareas } from "../../sections/tareas/toDoList.js";
 import { NuevaTarea } from "../../sections/newTarea/newTarea.js";
