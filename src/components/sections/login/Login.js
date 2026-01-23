@@ -22,7 +22,7 @@ function login() {
         const pass = password.value;
 
         if (username && pass) {
-            window.location.href = "../../src/App.html"
+            window.location.href = "../../AgendaWeb/src/App.html"
         } else {
             alert("Por favor llene los datos")
         }
