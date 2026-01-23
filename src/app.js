@@ -1,6 +1,6 @@
 import { Button } from "./components/common/button/button.js";
 import { Contactos } from "./components/sections/contactos/Contactos.js";
-import { viewContacts, viewNewContacts, viewToDoList, viewNewTask } from "./components/layout/nav/navController.js";
+import { viewContacts, viewNewContacts, viewToDoList, viewNewTask } from "./components/layout/nav/NavController.js";
 
 
 let app = document.getElementById("app");
